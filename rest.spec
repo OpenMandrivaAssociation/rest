@@ -76,9 +76,10 @@ find %{buildroot} -name '*.la' -delete
 %{_libdir}/girepository-1.0/RestExtras-%{api}.typelib
 
 %files -n %{develname}
-%doc NEWS README AUTHORS ChangeLog
+%doc README AUTHORS ChangeLog
 %{_includedir}/%{name}-%{api}
-%{_libdir}/pkgconfig/%{name}*
+%{_libdir}/pkgconfig/%{name}-%{api}.pc
+%{_libdir}/pkgconfig/%{name}-extras-%{api}.pc
 %{_libdir}/librest-%{api}.so
 %{_libdir}/librest-extras-%{api}.so
 %{_datadir}/gtk-doc/html/%{name}*%{api}
