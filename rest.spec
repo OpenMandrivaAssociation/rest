@@ -1,17 +1,17 @@
-%define api		0.7
+%define api	0.7
 %define major	0
 %define libname		%mklibname %{name} %{api} %{major}
-%define girlibname	%mklibname %{name}-gir %{api}
+%define girname		%mklibname %{name}-gir %{api}
 %define develname	%mklibname %{name} -d
 
-Name: rest
-Summary: Library for accessing rest web services
-Group: System/Libraries
-Version: 0.7.12
-License: LGPLv2+
-URL: http://www.gnome.org
-Release: 1
-Source0: http://ftp.gnome.org/pub/GNOME/sources/rest/%{api}/%{name}-%{version}.tar.xz
+Name:		rest
+Summary:	Library for accessing rest web services
+Group:		System/Libraries
+Version:	0.7.12
+Release:	2
+License:	LGPLv2+
+URL:		http://www.gnome.org
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/rest/%{api}/%{name}-%{version}.tar.xz
 
 BuildRequires: gtk-doc
 BuildRequires: pkgconfig(glib-2.0)
@@ -31,12 +31,11 @@ Conflicts: %{develname} < 0.7.10
 %description -n %{libname}
 Library for accessing rest web services
 
-%package -n %{girlibname}
+%package -n %{girname}
 Summary: GObject introspection interface library for %{name}
 Group: System/Libraries
-Requires: %{libname} = %{version}-%{release}
 
-%description -n %{girlibname}
+%description -n %{girname}
 GObject introspection interface library for %{name}.
 
 %package -n %{develname}
@@ -62,7 +61,6 @@ developing applications that use %{name}.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 find %{buildroot} -name '*.la' -delete
 
@@ -71,7 +69,7 @@ find %{buildroot} -name '*.la' -delete
 %{_libdir}/librest-%{api}.so.%{major}*
 %{_libdir}/librest-extras-%{api}.so.%{major}*
 
-%files -n %{girlibname}
+%files -n %{girname}
 %{_libdir}/girepository-1.0/Rest-%{api}.typelib
 %{_libdir}/girepository-1.0/RestExtras-%{api}.typelib
 
