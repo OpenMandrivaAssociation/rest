@@ -84,3 +84,68 @@ find %{buildroot} -name '*.la' -delete
 %{_datadir}/gir-1.0/Rest-%{api}.gir
 %{_datadir}/gir-1.0/RestExtras-%{api}.gir
 
+
+
+%changelog
+* Sun Apr 29 2012 Matthew Dawkins <mattydaw@mandriva.org> 0.7.12-2
++ Revision: 794432
+- rebuild for typelib
+
+* Wed Nov 23 2011 Matthew Dawkins <mattydaw@mandriva.org> 0.7.12-1
++ Revision: 732693
+- fixed devel pkg list
+- new version 0.7.12
+- cleaned up spec
+- removed defattr
+- removed clean section
+- split out gir pkg
+- merged doc pkg into devel
+- removed mkrel & BuildRoot
+- converted BRs to pkgconfig provides
+- updated URL
+- removed .la files
+- disabled static build
+- source pkg is rest not librest, following mdv policy
+
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.7.10-1
++ Revision: 657594
+- new version 0.7.10
+
+* Thu Apr 14 2011 Funda Wang <fwang@mandriva.org> 0.7.2-2
++ Revision: 652963
+- br g-ir
+- rebuild for new libsoup
+
+  + Claudio Matsuoka <claudio@mandriva.com>
+    - Update for MeeGo 1.1
+
+* Wed Aug 11 2010 Götz Waschk <waschk@mandriva.org> 0.6.1-5mdv2011.0
++ Revision: 568999
+- rebuild for new libproxy
+
+* Wed Oct 28 2009 Olivier Blin <blino@mandriva.org> 0.6.1-4mdv2010.0
++ Revision: 459749
+- 0.6.1, with versionned lib and extra lib (from Caio Begotti)
+
+* Mon Oct 05 2009 Olivier Blin <blino@mandriva.org> 0.6-4mdv2010.0
++ Revision: 454072
+- provide librest-devel
+- remove useless requires in -devel
+
+* Fri Oct 02 2009 Olivier Blin <blino@mandriva.org> 0.6-3mdv2010.0
++ Revision: 452555
+- fix devel group
+
+* Thu Oct 01 2009 Olivier Blin <blino@mandriva.org> 0.6-2mdv2010.0
++ Revision: 452386
+- fix naming that I broke (funny liblibrest will die)
+- use major in file list
+
+* Thu Oct 01 2009 Olivier Blin <blino@mandriva.org> 0.6-1mdv2010.0
++ Revision: 452264
+- include la in devel package
+- remove useless exclude
+- fix name
+- initial import (from Claudio Matsuoka and Caio Begotti, based on Fedora package)
+- Created package structure for librest.
+
