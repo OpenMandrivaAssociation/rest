@@ -1,49 +1,49 @@
-%define api	0.7
-%define major	0
-%define libname		%mklibname %{name} %{api} %{major}
-%define girname		%mklibname %{name}-gir %{api}
-%define develname	%mklibname %{name} -d
+%define api 0.7
+%define major 0
+%define libname %mklibname %{name} %{api} %{major}
+%define girname %mklibname %{name}-gir %{api}
+%define develname %mklibname %{name} -d
 
 Name:		rest
 Summary:	Library for accessing rest web services
 Group:		System/Libraries
 Version:	0.7.12
-Release:	2
+Release:	3
 License:	LGPLv2+
 URL:		http://www.gnome.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/rest/%{api}/%{name}-%{version}.tar.xz
 
-BuildRequires: gtk-doc
-BuildRequires: pkgconfig(glib-2.0)
-BuildRequires: pkgconfig(gobject-introspection-1.0)
-BuildRequires: pkgconfig(libsoup-2.4)
-BuildRequires: pkgconfig(libxml-2.0)
+BuildRequires:	gtk-doc
+BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gobject-introspection-1.0)
+BuildRequires:	pkgconfig(libsoup-2.4)
+BuildRequires:	pkgconfig(libxml-2.0)
 
 %description
-Library for accessing rest web services
+Library for accessing rest web services.
 
 %package -n %{libname}
-Summary: Library for accessing rest web services
-Group: System/Libraries
-Obsoletes: %{_lib}librest0 < %{version}
-Conflicts: %{develname} < 0.7.10
+Summary:	Library for accessing rest web services
+Group:		System/Libraries
+Obsoletes:	%{_lib}librest0 < %{version}
+Conflicts:	%{develname} < 0.7.10
 
 %description -n %{libname}
-Library for accessing rest web services
+Library for accessing rest web services.
 
 %package -n %{girname}
-Summary: GObject introspection interface library for %{name}
-Group: System/Libraries
+Summary:	GObject introspection interface library for %{name}
+Group:		System/Libraries
 
 %description -n %{girname}
 GObject introspection interface library for %{name}.
 
 %package -n %{develname}
-Summary: Development files for %{name}
-Group: Development/C
-Requires: %{libname} = %{version}-%{release}
-Provides: %{name}-devel = %{version}-%{release}
-%rename lib%{name}-doc
+Summary:	Development files for %{name}
+Group:		Development/C
+Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
+%rename		lib%{name}-doc
 
 %description -n %{develname}
 The %{name}-devel package contains libraries and header files for
