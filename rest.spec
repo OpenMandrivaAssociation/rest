@@ -7,11 +7,11 @@
 Name:		rest
 Summary:	Library for accessing rest web services
 Group:		System/Libraries
-Version:	0.7.12
-Release:	7
+Version:	0.7.90
+Release:	1
 License:	LGPLv2+
 URL:		http://www.gnome.org
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/rest/%{api}/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/rest/0.7/%{name}-%{version}.tar.xz
 
 BuildRequires:	gtk-doc
 BuildRequires:	pkgconfig(glib-2.0)
@@ -148,4 +148,5 @@ find %{buildroot} -name '*.la' -delete
 - fix name
 - initial import (from Claudio Matsuoka and Caio Begotti, based on Fedora package)
 - Created package structure for librest.
+
 
