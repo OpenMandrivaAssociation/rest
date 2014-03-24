@@ -9,11 +9,11 @@
 Summary:	Library for accessing rest web services
 Name:		rest
 Group:		System/Libraries
-Version:	0.7.90
-Release:	2
+Version:	0.7.91
+Release:	1
 License:	LGPLv2+
 Url:		http://www.gnome.org
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/rest/%{api}/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/rest/0.7/%{name}-%{version}.tar.xz
 BuildRequires:	gtk-doc
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
@@ -107,4 +107,5 @@ developing applications that use %{name}.
 %{_datadir}/gtk-doc/html/%{name}*%{api}
 %{_datadir}/gir-1.0/Rest-%{api}.gir
 %{_datadir}/gir-1.0/RestExtras-%{api}.gir
+
 

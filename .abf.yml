@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   rest-0.7.90.tar.xz: c1b7be3afed247252e2a15b1f6510707cf9ceca4
+sources:
+  rest-0.7.91.tar.xz: 63b2f2634c632a281f2684f240839ea9b714c7e3
