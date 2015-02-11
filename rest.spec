@@ -19,6 +19,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	rootcerts
 
 %description
 Library for accessing rest web services.
