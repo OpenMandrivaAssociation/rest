@@ -76,8 +76,7 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-%configure2_5x \
-	--disable-static \
+%configure \
 	--enable-introspection=yes \
 	--enable-gtk-doc
 
