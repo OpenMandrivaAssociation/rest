@@ -10,10 +10,10 @@ Summary:	Library for accessing rest web services
 Name:		rest
 Group:		System/Libraries
 Version:	0.8.1
-Release:	2
+Release:	3
 License:	LGPLv2+
 Url:		http://www.gnome.org
-Source0:	https://download.gnome.org/sources/rest/0.7/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/rest/0.8/%{name}-%{version}.tar.xz
 BuildRequires:	gtk-doc
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
