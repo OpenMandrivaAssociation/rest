@@ -9,11 +9,13 @@
 Summary:	Library for accessing rest web services
 Name:		rest
 Group:		System/Libraries
-Version:	0.8.1
-Release:	5
+Version:	0.9.0
+Release:	1
 License:	LGPLv2+
 Url:		http://www.gnome.org
-Source0:	https://download.gnome.org/sources/rest/0.8/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/rest/0.9/%{name}-%{version}.tar.xz
+
+BuildRequires:	meson
 BuildRequires:	gtk-doc
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
@@ -76,14 +78,12 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-%configure \
-	--enable-introspection=yes \
-	--enable-gtk-doc
+%meson
 
-%make
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 %files -n %{libname}
 %{_libdir}/librest-%{api}.so.%{major}*
