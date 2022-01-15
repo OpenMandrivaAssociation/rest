@@ -17,6 +17,7 @@ Source0:	https://download.gnome.org/sources/rest/0.9/%{name}-%{version}.tar.xz
 
 BuildRequires:	meson
 BuildRequires:	gtk-doc
+BuildRequires:  pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(libsoup-2.4)
