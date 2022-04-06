@@ -1,4 +1,4 @@
-%define api 0.7
+%define api 1.0
 %define major 0
 %define libname %mklibname %{name} %{api} %{major}
 %define libextr %mklibname %{name}-extras %{api} %{major}
@@ -9,15 +9,18 @@
 Summary:	Library for accessing rest web services
 Name:		rest
 Group:		System/Libraries
-Version:	0.8.1
-Release:	5
+Version:	0.9.0
+Release:	1
 License:	LGPLv2+
 Url:		http://www.gnome.org
-Source0:	https://download.gnome.org/sources/rest/0.8/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/rest/0.9/%{name}-%{version}.tar.xz
+
+BuildRequires:	meson
 BuildRequires:	gtk-doc
+BuildRequires:  pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
-BuildRequires:	pkgconfig(libsoup-2.4)
+BuildRequires:	pkgconfig(libsoup-3.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	rootcerts
 
@@ -76,14 +79,13 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-%configure \
-	--enable-introspection=yes \
-	--enable-gtk-doc
+%meson \
+        -Dsoup2=false
 
-%make
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 %files -n %{libname}
 %{_libdir}/librest-%{api}.so.%{major}*
@@ -98,12 +100,12 @@ developing applications that use %{name}.
 %{_libdir}/girepository-1.0/RestExtras-%{api}.typelib
 
 %files -n %{devname}
-%doc README AUTHORS ChangeLog COPYING
+%doc README AUTHORS COPYING
+%doc %{_datadir}/doc/libres-%{api}/
 %{_includedir}/%{name}-%{api}
 %{_libdir}/pkgconfig/%{name}-%{api}.pc
 %{_libdir}/pkgconfig/%{name}-extras-%{api}.pc
 %{_libdir}/librest-%{api}.so
 %{_libdir}/librest-extras-%{api}.so
-%{_datadir}/gtk-doc/html/%{name}*%{api}
 %{_datadir}/gir-1.0/Rest-%{api}.gir
 %{_datadir}/gir-1.0/RestExtras-%{api}.gir
