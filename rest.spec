@@ -101,7 +101,7 @@ developing applications that use %{name}.
 
 %files -n %{devname}
 %doc README AUTHORS COPYING
-%doc %{_datadir}/doc/libres-%{api}/
+%doc %{_datadir}/doc/librest-%{api}/
 %{_includedir}/%{name}-%{api}
 %{_libdir}/pkgconfig/%{name}-%{api}.pc
 %{_libdir}/pkgconfig/%{name}-extras-%{api}.pc
