@@ -20,7 +20,7 @@ BuildRequires:	gtk-doc
 BuildRequires:  pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
-BuildRequires:	pkgconfig(libsoup-2.4)
+BuildRequires:	pkgconfig(libsoup-3.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	rootcerts
 
@@ -79,7 +79,8 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-%meson
+%meson \
+        -Dsoup2=false
 
 %meson_build
 
@@ -99,12 +100,12 @@ developing applications that use %{name}.
 %{_libdir}/girepository-1.0/RestExtras-%{api}.typelib
 
 %files -n %{devname}
-%doc README AUTHORS ChangeLog COPYING
+%doc README AUTHORS COPYING
 %{_includedir}/%{name}-%{api}
 %{_libdir}/pkgconfig/%{name}-%{api}.pc
 %{_libdir}/pkgconfig/%{name}-extras-%{api}.pc
 %{_libdir}/librest-%{api}.so
 %{_libdir}/librest-extras-%{api}.so
-%{_datadir}/gtk-doc/html/%{name}*%{api}
+#{_datadir}/gtk-doc/html/%{name}*%{api}
 %{_datadir}/gir-1.0/Rest-%{api}.gir
 %{_datadir}/gir-1.0/RestExtras-%{api}.gir
