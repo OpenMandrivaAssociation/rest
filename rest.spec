@@ -102,7 +102,7 @@ developing applications that use %{name}.
 %{_libdir}/girepository-1.0/RestExtras-%{api}.typelib
 
 %files -n %{devname}
-%doc README AUTHORS COPYING
+%doc README* AUTHORS COPYING
 %doc %{_datadir}/doc/librest-%{api}/
 %{_includedir}/%{name}-%{api}
 %{_libdir}/pkgconfig/%{name}-%{api}.pc
