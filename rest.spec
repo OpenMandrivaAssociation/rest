@@ -20,6 +20,7 @@ BuildRequires:	gtk-doc
 BuildRequires:  pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
+BuildRequires:  pkgconfig(libadwaita-1)
 BuildRequires:	pkgconfig(libsoup-3.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	rootcerts
