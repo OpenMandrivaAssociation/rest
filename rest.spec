@@ -82,7 +82,8 @@ developing applications that use %{name}.
 
 %build
 %meson \
-        -Dsoup2=false
+        -Dsoup2=false \
+        -Dexamples=false
 
 %meson_build
 
