@@ -10,7 +10,7 @@ Summary:	Library for accessing rest web services
 Name:		rest
 Group:		System/Libraries
 Version:	0.9.1
-Release:	7
+Release:	8
 License:	LGPLv2+
 Url:		https://www.gnome.org
 Source0:	https://download.gnome.org/sources/rest/0.9/%{name}-%{version}.tar.xz
