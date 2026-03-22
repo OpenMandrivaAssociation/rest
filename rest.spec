@@ -9,11 +9,12 @@
 Summary:	Library for accessing rest web services
 Name:		rest
 Group:		System/Libraries
-Version:	0.9.1
-Release:	9
+Version:	0.10.2
+Release:	1
 License:	LGPLv2+
 Url:		https://www.gnome.org
-Source0:	https://download.gnome.org/sources/rest/0.9/%{name}-%{version}.tar.xz
+#Source0:	https://download.gnome.org/sources/rest/0.9/%{name}-%{version}.tar.xz
+Source0:        https://gitlab.gnome.org/GNOME/librest/-/archive/%{version}/librest-%{version}.tar.bz2
 
 BuildRequires:	meson
 BuildRequires:	gtk-doc
@@ -23,7 +24,7 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(gtksourceview-5)
 BuildRequires:  pkgconfig(libadwaita-1)
 BuildRequires:	pkgconfig(libsoup-3.0)
-BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libxml-2.0) >= 2.15.2
 BuildRequires:	rootcerts
 
 %description
@@ -78,7 +79,7 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 %prep
-%setup -q
+%autosetup -n librest-%{version} -p1
 
 %build
 %meson \
